@@ -1,6 +1,6 @@
 import Header from '@components/header/Header';
 import { useEffect, useMemo, useState } from 'react';
-import MenuBuger from '@components/MenuBuger';
+import MenuBuger from '@components/menuBurger/MenuBuger';
 import { ColorModeContext, MenuBurgerContext } from '../context';
 
 interface ILayoutProps {
@@ -50,9 +50,10 @@ function Layout({ children }: ILayoutProps): JSX.Element {
       <ColorModeContext.Provider value={colorModeContextValue}>
         <div
           style={{
-            backgroundColor: colorActive === '#0E0000' ? '#202020' : '#ffffff',
+            backgroundColor:
+              colorActive === '#202020' ? colorActive : '#ffffff',
           }}
-          className="pt-[3rem] w-screen"
+          className="pt-[3rem] max-w-screen"
         >
           <Header />
           <MenuBuger />

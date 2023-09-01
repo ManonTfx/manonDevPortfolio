@@ -7,15 +7,20 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         oswald: ['Oswald', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         white: '#FFFFFF',
         black: '#000000',
-        textColor: '#202020',
+        darkMode: '#2D2A2A',
+        textColor: '#413B3B',
         darkBackground: '#262020',
         pink: '#d02e86',
         orange: '#fc9700',
         green: '#0fb87b',
+      },
+      borderRadius: {
+        default: '16px',
       },
     },
   },

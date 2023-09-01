@@ -1,25 +1,56 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import {
+  hand_height,
+  hand_five,
+  hand_four,
+  hand_one,
+  hand_seven,
+  hand_six,
+  hand_three,
+  hand_two,
+  hand_one_dark,
+  hand_two_dark,
+  hand_three_dark,
+  hand_four_dark,
+  hand_five_dark,
+  hand_six_dark,
+  hand_seven_dark,
+  hand_height_dark,
+} from '@assets/img/image';
+import { ColorModeContext } from '../../context';
 
 function HandAnimation() {
-  const svgArray = [
-    '/assets/img/hand_one.svg',
-    '/assets/img/hand_two.svg',
-    '/assets/img/hand_three.svg',
-    '/assets/img/hand_four.svg',
-    '/assets/img/hand_five.svg',
-    '/assets/img/hand_six.svg',
-    '/assets/img/hand_seven.svg',
-    '/assets/img/hand_height.svg',
-    '/assets/img/hand_seven.svg',
-    '/assets/img/hand_six.svg',
-    '/assets/img/hand_five.svg',
-    '/assets/img/hand_four.svg',
-    '/assets/img/hand_three.svg',
-    '/assets/img/hand_two.svg',
+  const svgHandArrayInitial = [
+    hand_one,
+    hand_two,
+    hand_three,
+    hand_four,
+    hand_five,
+    hand_six,
+    hand_seven,
+    hand_height,
+    hand_seven,
+    hand_six,
+    hand_five,
+    hand_four,
+    hand_three,
+    hand_two,
   ];
+
+  const [svgArray, setSvgArray] = useState<string[]>(svgHandArrayInitial);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+
+  const { colorActive } = useContext(ColorModeContext);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
 
   useEffect(() => {
     let timer: any;
@@ -41,20 +72,33 @@ function HandAnimation() {
     };
   }, [isHovering, svgArray, currentImageIndex]);
 
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
+  useEffect(() => {
+    if (colorActive !== '#202020' && svgArray !== svgHandArrayInitial) {
+      setSvgArray(svgHandArrayInitial);
+    }
+    if (colorActive === '#202020') {
+      setSvgArray([
+        hand_one_dark,
+        hand_two_dark,
+        hand_three_dark,
+        hand_four_dark,
+        hand_five_dark,
+        hand_six_dark,
+        hand_seven_dark,
+        hand_height_dark,
+        hand_seven_dark,
+        hand_six_dark,
+        hand_five_dark,
+        hand_four_dark,
+        hand_three_dark,
+        hand_two_dark,
+      ]);
+    }
+  }, [colorActive]);
 
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <img
-        style={{ height: '2rem' }}
-        src={process.env.PUBLIC_URL + svgArray[currentImageIndex]}
-        alt=""
-      />
+      <img src={svgArray[currentImageIndex]} className="h-[2.5rem]" alt="" />
     </div>
   );
 }

@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { ColorModeContext } from '../context';
+
 const bannerWords = [
   { id: 0, title: 'EXPERTISE' },
   { id: 1, title: 'REACT' },
@@ -18,18 +21,23 @@ const bannerWords = [
 ];
 
 function Banner() {
+  const { colorActive } = useContext(ColorModeContext);
   return (
-    <div className="bannerContainer">
-      <div className="banner">
-        {bannerWords.map((word) => (
-          <span
-            className="font-bold text-[15rem] tracking-tighter"
-            key={word.id + word.title}
-            style={{ margin: '0 50px' }}
-          >
-            {word.title}
-          </span>
-        ))}
+    <div className="relative" style={{ zIndex: 3 }}>
+      <div className="bannerContainer">
+        <div className="banner">
+          {bannerWords.map((word) => (
+            <span
+              className={[
+                'font-bold text-[15rem] tracking-tighter my-2 font-oswald',
+                colorActive !== '#202020' ? 'text-textColor' : 'text-white',
+              ].join(' ')}
+              key={word.id + word.title}
+            >
+              {word.title}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
