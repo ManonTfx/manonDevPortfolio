@@ -1,6 +1,6 @@
 import Hamburger from 'hamburger-react';
 import { useContext } from 'react';
-import { ColorModeContext, MenuBurgerContext } from '../../context';
+import { ColorModeContext, MenuBurgerContext } from '@utils/context';
 
 function ButtonMenuHamburger() {
   const { colorActive } = useContext(ColorModeContext);
@@ -13,7 +13,7 @@ function ButtonMenuHamburger() {
       style={{
         borderColor: colorActive === '#202020' ? '#B80F6A' : colorActive,
       }}
-      className="button-container h-12 overflow-hidden flex items-center border border-1 py-1 rounded-[8px]"
+      className="button-container h-12 overflow-hidden flex items-center border border-1 py-1 rounded-[8px] pr-2 lg:pr-0"
     >
       <Hamburger
         color={colorActive === '#202020' ? '#ffffff' : '#202020'}

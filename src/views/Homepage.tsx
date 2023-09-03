@@ -2,7 +2,7 @@ import Title from '@components/Title';
 import About from '@components/about/About';
 import Banner from '@components/Banner';
 import Contact from '@components/Contact';
-import CardsWorkContainer from '@components/cardsWork/CardsWorkContainer';
+import CardsWorkContainer from '@components/cardsProjects/CardsProjectsContainer';
 
 function Homepage() {
   return (

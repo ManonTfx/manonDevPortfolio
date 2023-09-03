@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { manon } from '@assets/img/image';
 import { ArrowDown } from '@assets/imageComponent';
-import { ColorModeContext } from '../../context';
+import { ColorModeContext } from '@utils/context';
 
 interface IPresentationProps {
   skillsSectionRef: React.RefObject<HTMLDivElement>;
@@ -26,18 +26,20 @@ function Presentation({ skillsSectionRef }: IPresentationProps): JSX.Element {
       className="lg:flex lg:space-x-20 lg:w-full m-auto mt-[5rem] text-black"
     >
       <img
-        className="h-[65rem] lg:m-0 m-auto rounded-default"
+        className="lg:h-[65rem] lg:m-0 m-auto rounded-default"
         src={manon}
         alt=""
       />
-      <div className="flex flex-col w-1/2 justify-between text-[1.5rem] pr-16 text-white ">
+      <div className="flex flex-col lg:w-1/2 justify-between text-[1.5rem] lg:pr-16 text-white lg:mt-0 mt-[4rem]">
         <div>
           <div className={`selection_color_${selectionColor}`}>
-            Passionnée d&apos;informatique, de jeux vidéo et d&apos;univers
-            numériques,j&apos;ai plongé tête la première dans le développement
-            front-end, en me spécialisant en React / TypeScript. Toujours
-            curieuse, je suis à l&apos;affût des défis web les plus fous et des
-            nouvelles tendances
+            Passionnée par l&apos;informatique et le monde numérique, j&apos;ai
+            orienté ma carrière vers le développement front-end, en me
+            spécialisant dans les technologies JavaScript, TypeScript et React.
+            Parallèlement, je possède également des compétences solides en
+            WordPress. Ma curiosité naturelle m&apos;amène à chercher
+            constamment à améliorer mes compétences et à relever de nouveaux
+            défis.
           </div>
         </div>
         <div className="w-full">
@@ -46,7 +48,7 @@ function Presentation({ skillsSectionRef }: IPresentationProps): JSX.Element {
             onMouseLeave={() => setHoverSeeMoreButton(false)}
             onMouseEnter={() => setHoverSeeMoreButton(true)}
             onClick={handleLearnMoreClick}
-            className="float-right border relative p-[1rem] overflow-hidden rounded-default flex items-center space-x-3"
+            className="float-right border relative p-[1rem] overflow-hidden rounded-default flex items-center space-x-3 invisible lg:visible"
           >
             <div
               style={{

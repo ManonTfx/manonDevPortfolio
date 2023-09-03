@@ -1,6 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import { ColorModeContext } from '../../context';
-
+import { ColorModeContext, ResponsiveContext } from '@utils/context';
 import Hello from './Hello';
 import Presentation from './Presentation';
 import Skills from './Skills';
@@ -10,6 +9,7 @@ function About(): JSX.Element {
   const skillsSectionRef = useRef<HTMLDivElement>(null);
 
   const { colorActive } = useContext(ColorModeContext);
+  const { isMobile } = useContext(ResponsiveContext);
 
   const [margin, setMargin] = useState(4);
 
@@ -31,12 +31,22 @@ function About(): JSX.Element {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleWindowScroll, { passive: true });
+    if (!isMobile) {
+      window.addEventListener('scroll', handleWindowScroll, { passive: true });
+    }
 
     return () => {
       window.removeEventListener('scroll', handleWindowScroll);
     };
-  }, []);
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile) {
+      setMargin(2);
+    } else {
+      setMargin(4);
+    }
+  }, [isMobile]);
 
   return (
     <div
@@ -47,7 +57,7 @@ function About(): JSX.Element {
         marginRight: `${margin}rem`,
         borderRadius: margin === 0 ? '0px' : '16px',
       }}
-      className="text-white px-[8rem] py-[4rem] mt-[17rem] rounded-default transition-all duration-500"
+      className="text-white lg:px-[8rem] px-[2rem] py-[4rem] mt-[17rem] rounded-default transition-all duration-500"
     >
       <div
         className={[

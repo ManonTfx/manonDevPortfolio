@@ -1,15 +1,19 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ColorModeContext, ResponsiveContext } from '@utils/context';
 import ButtonChangeColor from './ButtonChangeColor';
-import { ColorModeContext } from '../../context';
 import HandAnimation from './HandAnimation';
 import ButtonMenuHamburger from './ButtonMenuHamburger';
 
 function Header() {
   const { colorActive } = useContext(ColorModeContext);
+  const { isMobile } = useContext(ResponsiveContext);
+
   return (
-    <div id="header" className="px-[4rem] flex items-center justify-between">
+    <div
+      id="header"
+      className="lg:px-[4rem] px-[2rem] py-5 flex items-center justify-between tranition-all duration-500"
+    >
       <Link to="/" className="flex space-x-1 items-end hover">
         <HandAnimation />
         <p
@@ -37,7 +41,7 @@ function Header() {
         />
       </Link>
       <div className="flex space-x-5">
-        <ButtonChangeColor />
+        {!isMobile && <ButtonChangeColor />}
         <ButtonMenuHamburger />
       </div>
     </div>

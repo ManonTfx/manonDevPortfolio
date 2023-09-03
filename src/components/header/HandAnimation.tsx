@@ -1,44 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
-import {
-  hand_height,
-  hand_five,
-  hand_four,
-  hand_one,
-  hand_seven,
-  hand_six,
-  hand_three,
-  hand_two,
-  hand_one_dark,
-  hand_two_dark,
-  hand_three_dark,
-  hand_four_dark,
-  hand_five_dark,
-  hand_six_dark,
-  hand_seven_dark,
-  hand_height_dark,
-} from '@assets/img/image';
-import { ColorModeContext } from '../../context';
+import { handSvgDarkMode, handSvgLightMode } from '@utils/datas';
+import { ColorModeContext } from '@utils/context';
 
 function HandAnimation() {
-  const svgHandArrayInitial = [
-    hand_one,
-    hand_two,
-    hand_three,
-    hand_four,
-    hand_five,
-    hand_six,
-    hand_seven,
-    hand_height,
-    hand_seven,
-    hand_six,
-    hand_five,
-    hand_four,
-    hand_three,
-    hand_two,
-  ];
-
-  const [svgArray, setSvgArray] = useState<string[]>(svgHandArrayInitial);
-
+  const [svgArray, setSvgArray] = useState<string[]>(handSvgLightMode);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -73,26 +38,11 @@ function HandAnimation() {
   }, [isHovering, svgArray, currentImageIndex]);
 
   useEffect(() => {
-    if (colorActive !== '#202020' && svgArray !== svgHandArrayInitial) {
-      setSvgArray(svgHandArrayInitial);
+    if (colorActive !== '#202020' && svgArray !== handSvgLightMode) {
+      setSvgArray(handSvgLightMode);
     }
     if (colorActive === '#202020') {
-      setSvgArray([
-        hand_one_dark,
-        hand_two_dark,
-        hand_three_dark,
-        hand_four_dark,
-        hand_five_dark,
-        hand_six_dark,
-        hand_seven_dark,
-        hand_height_dark,
-        hand_seven_dark,
-        hand_six_dark,
-        hand_five_dark,
-        hand_four_dark,
-        hand_three_dark,
-        hand_two_dark,
-      ]);
+      setSvgArray(handSvgDarkMode);
     }
   }, [colorActive]);
 

@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { ColorModeContext } from '../../context';
+import { colors } from '@utils/datas';
+import { ColorModeContext } from '@utils/context';
 
 function ButtonChangeColor() {
   const { colorActive, updateColorActive } = useContext(ColorModeContext);
   const [showColors, setShowColors] = useState(false);
 
-  const colors = ['#B80F6A', '#FC9700', '#0FB87B', '#202020'];
   return (
     <div
       className="overflow-hidden transition-all duration-100 flex items-center border border-1 py-1 rounded-[8px]"
@@ -33,7 +33,9 @@ function ButtonChangeColor() {
         >
           {colors.map((color) => (
             <button
-              onClick={() => updateColorActive(color)}
+              onClick={() =>
+                updateColorActive(color !== '#000000' ? color : '#202020')
+              }
               type="button"
               key={color}
             >

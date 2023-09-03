@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ColorModeContext } from '../../context';
+import { ColorModeContext } from '@utils/context';
 
 interface IOneSkillProps {
   titleSkill: string;
@@ -10,10 +10,10 @@ function OneSkill({ titleSkill, skills }: IOneSkillProps): JSX.Element {
   const { selectionColor } = useContext(ColorModeContext);
 
   return (
-    <div>
+    <div className="lg:mt-0 mt-[1rem]">
       <div className="flex space-x-3 items-center">
         <p
-          className={`lg:text-[2rem] font-medium selection_color_${selectionColor}`}
+          className={`lg:text-[2rem] text-[1.5rem] font-medium selection_color_${selectionColor}`}
         >
           {titleSkill}
         </p>

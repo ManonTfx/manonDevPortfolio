@@ -1,12 +1,11 @@
 import { useContext } from 'react';
-import { ColorModeContext, MenuBurgerContext } from '../../context';
+import { ColorModeContext, MenuBurgerContext } from '@utils/context';
+import { nav } from '@utils/datas';
 import OneLink from './OneLink';
 
 function MenuBurger(): JSX.Element {
   const { menuBurgerIsOpen } = useContext(MenuBurgerContext);
   const { colorActive } = useContext(ColorModeContext);
-
-  const nav = ['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'];
 
   return (
     <div
@@ -14,21 +13,18 @@ function MenuBurger(): JSX.Element {
         zIndex: menuBurgerIsOpen ? 9999 : -9999,
         top: 120,
       }}
-      className="overflow-hidden transition-all w-full ease max-h-screen h-screen absolute "
+      className="overflow-hidden transition-all w-full ease max-h-screen h-screen absolute"
     >
       <div
-        className="w-full absolute transition-all duration-500 "
+        className="absolute transition-all duration-500 lg:pl-0 pl-[2rem] lg:pl-[4rem] lg:flex lg:w-[calc(100% - 10rem)] w-full"
         style={{
           height: menuBurgerIsOpen ? '100%' : '0%',
-          display: 'flex',
-          justifyContent: 'center',
           bottom: 0,
         }}
       >
         <div
-          className="flex flex-col bg-white"
+          className="flex flex-col bg-white w-full lg:mr-[4rem] mr-[2rem]"
           style={{
-            width: 'calc(100% - 10rem)',
             backgroundColor: colorActive !== '#202020' ? '' : colorActive,
           }}
         >

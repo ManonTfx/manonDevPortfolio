@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ColorModeContext } from '../../context';
+import { ColorModeContext } from '@utils/context';
 import OneSkill from './SkillsCard';
 
 function Skills() {
@@ -52,7 +52,7 @@ function Skills() {
       >
         COMPETENCES
       </p>
-      <div className="flex justify-between mt-6 m-auto">
+      <div className="lg:flex justify-between lg:mt-6 m-auto">
         {skills.map((skill) => (
           <OneSkill
             key={skill.title}
