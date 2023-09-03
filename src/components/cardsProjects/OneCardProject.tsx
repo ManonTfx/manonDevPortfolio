@@ -20,12 +20,12 @@ function OneCardProject({ project }: IOneCardProjectProps): JSX.Element {
     >
       <div
         style={{
-          borderColor: colorActive !== '#202020' ? '#413B3B' : '#B80F6A',
+          borderColor: colorActive !== '#202020' ? colorActive : '#B80F6A',
           height: 'calc(100% - 10rem)',
         }}
-        className="card border border-2 rounded-default lg:px-[6rem] px-[2rem] mt-10 flex flex-col justify-between pb-[2rem]"
+        className="card border border-2 rounded-default lg:px-[6rem] overflow-hidden lg:pr-[0rem] px-[2rem] mt-10 flex flex-col justify-between "
       >
-        <div className="lg:flex justify-between">
+        <div className="lg:flex justify-between h-full">
           <div>
             <p
               style={{
@@ -49,18 +49,26 @@ function OneCardProject({ project }: IOneCardProjectProps): JSX.Element {
                   </div>
                 ))}
               </div>
+              <ButtonLink
+                link={`/project/${project.companyName}`}
+                titleButton="EN SAVOIR PLUS"
+              />
             </div>
           </div>
-          <img
-            className="lg:w-8/12 lg:h-[50vh] mt-6 object-fit rounded-default"
-            src={project.img}
-            alt={project.companyName}
-          />
+          <div
+            style={{
+              backgroundColor:
+                colorActive !== '#202020' ? colorActive : '#000000',
+            }}
+            className="lg:px-[2rem] lg:w-8/12 lg:h-full"
+          >
+            <img
+              className="mt-6 lg:mt-[9rem] object-contain rounded-default"
+              src={project.img}
+              alt={project.companyName}
+            />
+          </div>
         </div>
-        <ButtonLink
-          link={`/project/${project.companyName}`}
-          titleButton="EN SAVOIR PLUS"
-        />
       </div>
     </div>
   );

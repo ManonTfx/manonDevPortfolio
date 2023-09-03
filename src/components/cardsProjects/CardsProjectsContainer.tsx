@@ -6,12 +6,16 @@ import OneCardProject from './OneCardProject';
 
 function CardsProjectsContainer(): JSX.Element {
   const worksCardsContainerRef = useRef<HTMLDivElement>(null);
+  const prevScrollPositionRef = useRef(0);
+
   const scrollingDownRef = useRef<boolean>(false);
   const coolDownRef = useRef(false);
 
   const { isMobile } = useContext(ResponsiveContext);
 
   const handleContainerWheel = (event: WheelEvent) => {
+    event.preventDefault(); // Ajouter cette ligne
+
     if (worksCardsContainerRef.current) {
       const container = worksCardsContainerRef.current;
       scrollingDownRef.current = event.deltaY > 0;
@@ -42,6 +46,15 @@ function CardsProjectsContainer(): JSX.Element {
       const lastCard = container.children[projectsCardsData.length - 1];
       const lastCardRect = lastCard.getBoundingClientRect();
 
+      const currentScrollPosition = window.scrollY;
+      const scrollDifference = Math.abs(
+        currentScrollPosition - prevScrollPositionRef.current
+      );
+
+      const coolDownDelay = Math.min(Math.max(scrollDifference, 100), 500);
+
+      prevScrollPositionRef.current = currentScrollPosition;
+
       if (
         firstCardRect.top <= 150 &&
         lastCardRect.bottom > window.innerHeight
@@ -59,7 +72,7 @@ function CardsProjectsContainer(): JSX.Element {
 
         setTimeout(() => {
           coolDownRef.current = false;
-        }, 300);
+        }, coolDownDelay);
       } else {
         container.style.overflowY = 'hidden';
         document.body.style.overflow = 'scroll';

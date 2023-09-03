@@ -15,7 +15,7 @@ interface ILayoutProps {
 }
 
 function Layout({ children }: ILayoutProps): JSX.Element {
-  const isMobileInit = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobileInit = useMediaQuery({ query: '(max-width: 1024px)' });
   const [colorActive, setColorActive] = useState<string>('#B80F6A');
   const [menuBurgerIsOpen, setMenuBurgerIsOpen] = useState<boolean>(false);
   const [selectionColor, setSelectionColor] = useState<string>('pink');
@@ -25,7 +25,7 @@ function Layout({ children }: ILayoutProps): JSX.Element {
 
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     }
 
     window.addEventListener('resize', handleResize);
