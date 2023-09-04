@@ -16,14 +16,13 @@ function OneCardProject({ project }: IOneCardProjectProps): JSX.Element {
         backgroundColor: colorActive !== '#202020' ? '#ffffff' : '#202020',
         color: colorActive !== '#202020' ? '#413B3B' : '#ffffff',
       }}
-      className=" h-full rounded-default lg:mx-[4rem] mx-[2rem] lg:sticky top-0"
+      className="h-screen p-2 rounded-default lg:mx-[4rem] mx-[2rem] lg:sticky top-0"
     >
       <div
         style={{
           borderColor: colorActive !== '#202020' ? colorActive : '#B80F6A',
-          height: 'calc(100% - 10rem)',
         }}
-        className="card border border-2 rounded-default lg:px-[6rem] overflow-hidden lg:pr-[0rem] px-[2rem] mt-10 flex flex-col justify-between "
+        className=" border border-2 rounded-default lg:px-[6rem] overflow-hidden  lg:pr-[0rem] px-[2rem] my-5 flex flex-col justify-between h-[95vh]"
       >
         <div className="lg:flex justify-between h-full">
           <div>

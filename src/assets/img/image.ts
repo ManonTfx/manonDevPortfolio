@@ -32,6 +32,8 @@ import hand_six_dark from './hand_six_dark.svg';
 import hand_seven_dark from './hand_seven_dark.svg';
 import hand_height_dark from './hand_height_dark.svg';
 import manon from './manon.jpeg';
+import linkedinIcon from './linkedin_icon.svg';
+import githubIcon from './github_icon.svg';
 
 export {
   arrowDown,
@@ -68,4 +70,6 @@ export {
   hand_six_dark,
   hand_seven_dark,
   hand_height_dark,
+  linkedinIcon,
+  githubIcon,
 };

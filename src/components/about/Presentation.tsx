@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { manon } from '@assets/img/image';
 import { ArrowDown } from '@assets/imageComponent';
 import { ColorModeContext } from '@utils/context';
+import SocialNetwork from './SocialNetwork';
 
 interface IPresentationProps {
   skillsSectionRef: React.RefObject<HTMLDivElement>;
@@ -41,6 +42,7 @@ function Presentation({ skillsSectionRef }: IPresentationProps): JSX.Element {
             constamment à améliorer mes compétences et à relever de nouveaux
             défis.
           </div>
+          <SocialNetwork />
         </div>
         <div className="w-full">
           <button
