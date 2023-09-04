@@ -1,7 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useContext, useState } from 'react';
 import { manon } from '@assets/img/image';
 import { ArrowDown } from '@assets/imageComponent';
 import { ColorModeContext } from '@utils/context';
+import { useTranslation } from 'react-i18next';
 import SocialNetwork from './SocialNetwork';
 
 interface IPresentationProps {
@@ -9,6 +11,8 @@ interface IPresentationProps {
 }
 
 function Presentation({ skillsSectionRef }: IPresentationProps): JSX.Element {
+  const { t } = useTranslation();
+
   const [hoverSeeMoreButton, setHoverSeeMoreButton] = useState(false);
   const { selectionColor, colorActive } = useContext(ColorModeContext);
 
@@ -34,13 +38,7 @@ function Presentation({ skillsSectionRef }: IPresentationProps): JSX.Element {
       <div className="flex flex-col lg:w-1/2 justify-between text-[1.5rem] lg:pr-16 text-white lg:mt-0 mt-[4rem]">
         <div>
           <div className={`selection_color_${selectionColor}`}>
-            Passionnée par l&apos;informatique et le monde numérique, j&apos;ai
-            orienté ma carrière vers le développement front-end, en me
-            spécialisant dans les technologies JavaScript, TypeScript et React.
-            Parallèlement, je possède également des compétences solides en
-            WordPress. Ma curiosité naturelle m&apos;amène à chercher
-            constamment à améliorer mes compétences et à relever de nouveaux
-            défis.
+            {t('about_presentation')}
           </div>
           <SocialNetwork />
         </div>
@@ -66,7 +64,7 @@ function Presentation({ skillsSectionRef }: IPresentationProps): JSX.Element {
                 color: hoverSeeMoreButton ? colorActive : 'white',
               }}
             >
-              En savoir plus
+              {t('learn_more')}
             </div>
             <ArrowDown
               className={`z-10 transition ${

@@ -1,48 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
 import { ColorModeContext } from '@utils/context';
+import { useTranslation } from 'react-i18next';
+import { skills } from '@utils/datas';
 import OneSkill from './SkillsCard';
 
 function Skills() {
+  const { t } = useTranslation();
   const { selectionColor } = useContext(ColorModeContext);
-
-  const skills = [
-    {
-      title: 'Technologies',
-      skillsArray: [
-        'React',
-        'Javascript / Typescript',
-        'HTML / CSS',
-        'NextJS',
-        'TailwindCSS',
-        'Storybook',
-        'NodeJs',
-        'Prisma',
-        'GraphQL',
-        'PostgreSQL',
-      ],
-    },
-    {
-      title: 'Design',
-      skillsArray: ['UI Design', 'UX Design', 'Prototypage'],
-    },
-    {
-      title: 'Outils',
-      skillsArray: [
-        'Figma',
-        'VSCode',
-        'Postman',
-        'Github',
-        'Gitlab',
-        'Slack',
-        'Trello',
-        'Notion',
-      ],
-    },
-    {
-      title: 'Personnelles',
-      skillsArray: ['Curieuse', 'Autonome', 'Créative', 'organisée'],
-    },
-  ];
 
   return (
     <div>
@@ -50,10 +15,10 @@ function Skills() {
       <p
         className={`font-light mt-2 text-[1.2rem] m-auto selection_white selection_color_${selectionColor}`}
       >
-        COMPETENCES
+        {t('skills')}
       </p>
       <div className="lg:flex justify-between lg:mt-6 m-auto">
-        {skills.map((skill) => (
+        {skills(t).map((skill) => (
           <OneSkill
             key={skill.title}
             titleSkill={skill.title}

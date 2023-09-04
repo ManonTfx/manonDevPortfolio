@@ -1,9 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import Contact from '@components/Contact';
 import CardsProjectsContainer from '@components/cardsProjects/CardsProjectsContainer';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ButtonLink from '@components/ButtonLink';
 import { ColorModeContext } from '@utils/context';
+import { useTranslation } from 'react-i18next';
 import { projectDatasInitial } from '../utils/initialsValues';
 import { scrollToTop } from '../utils/function';
 import {
@@ -17,6 +19,7 @@ import {
 import { IProjectDatas } from '../utils/types';
 
 function ProjectDetail() {
+  const { t } = useTranslation();
   const { project } = useParams();
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -30,26 +33,26 @@ function ProjectDetail() {
 
     switch (project) {
       case 'OPX':
-        setProjectDatas(opxDatas);
+        setProjectDatas(opxDatas(t));
         break;
       case 'Drapo':
-        setProjectDatas(drapoDatas);
+        setProjectDatas(drapoDatas(t));
         break;
       case 'Drapo Solution':
-        setProjectDatas(drapoSolutionDatas);
+        setProjectDatas(drapoSolutionDatas(t));
         break;
       case 'Remi Blanchet':
-        setProjectDatas(remiBlanchetDatas);
+        setProjectDatas(remiBlanchetDatas(t));
         break;
       case 'Valentine Bouvet':
-        setProjectDatas(valentineBouvetDatas);
+        setProjectDatas(valentineBouvetDatas(t));
         break;
       case 'Techpath':
-        setProjectDatas(TechpathDatas);
+        setProjectDatas(TechpathDatas(t));
         break;
       default:
     }
-  }, [project]);
+  }, [project, t]);
 
   return (
     <div
@@ -63,7 +66,7 @@ function ProjectDetail() {
               <p className="font-medium text-[5rem] font-oswald ">{project}</p>
 
               <hr className="mt-5" />
-              <p className="mt-8 text-[1.5rem]">Année:</p>
+              <p className="mt-8 text-[1.5rem]">{t('year')}:</p>
               <p className="font-medium text-[5rem] font-oswald">
                 {projectDatas.year}
               </p>
@@ -95,7 +98,7 @@ function ProjectDetail() {
             )}
             <ButtonLink
               link={projectDatas.link}
-              titleButton="ACCEDER AU SITE"
+              titleButton={t('see_website')}
             />
           </div>
 

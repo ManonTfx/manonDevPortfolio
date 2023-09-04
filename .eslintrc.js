@@ -43,6 +43,14 @@ module.exports = {
     },
   ],
   rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.test.js', '**/*.spec.js'],
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
     'import/no-unresolved': 'off',
     camelcase: 'off',
     'no-use-before-define': 'off',

@@ -1,0 +1,35 @@
+{
+    "see_more": "See more",
+    "title": "Front-end Developer",
+    "subtitle": "I help you carry out your web projects",
+    "nav": {
+        "home": "HOME",
+        "about": "ABOUT",
+        "projects": "PROJECTS",
+        "contact": "CONTACT"
+    
+    },
+    "hello_text": "Passionate and creative coder, based in Marseille and ready to infuse a dose of innovation and technicality into your team! I invite you to discover my work and my world by browsing my portfolio.",
+    "about_presentation":"Passionate about IT and the digital world, I oriented my career towards front-end development, specializing in JavaScript, TypeScript and React technologies. At the same time, I also have solid skills in WordPress. My natural curiosity leads me to constantly seek to improve my skills and take on new challenges.",
+    "learn_more": "Learn more",
+    "skills": "SKILLS",
+    "stacks": "Stacks",
+    "tools": "Tools",
+    "personal": "Personal",
+    "curious": "Curious",
+    "organized": "Organized",
+    "autonomous": "Autonomous",
+    "creative": "Creative",
+    "see_project": "SEE PROJECT",
+    "see_website": "SEE WEBSITE",
+    "contact_interessed": "Interested in working together?",
+    "send_me_an_email": "Send me an email:",
+    "year": "Year",
+    "opx_description": "OPX is an administrative management platform. It was developed with the aim of facilitating the management of CEE premiums. It allows you to manage files, invoices, bonuses and payments. This application includes a dashboard with graphs and tables. It is possible to filter the data and export it. A help simulator has also been integrated into the application.",
+    "drapo_description": "Drapo is a company that offers financing solutions for energy renovation projects by including bonuses in quotes, and offers expert support throughout the partners' journey to facilitate the energy transition.",
+    "drapo_subdescription": "As a front-end developer at Drapo for two years, I had the opportunity to fully integrate their landing page and I participated in the integration of their professional space, a platform that allows you to manage file tracking. and bonuses.",
+     "remi_blanchet_description":"Remi Blanchet is a young street wear style fashion designer who trusted me with the integration of his E-Commerce site. This was carried out using the Shopify CMS.",
+     "valentine_bouvet_description": "Valentine Bouvet is a painter who trusted me for the integration of her showcase site. This was done using the Shopify CMS.",
+     "techpath_description": "Techpath is a young company specializing in tech which offers several services such as website creation, mobile application development, logo creation and SEO optimization. I integrated the landing page using the Wordpress CMS, wrote the articles on the company blog and I also participated in the creation of the logo.",
+     "drapo_solution_description": "Drapo Solution being the technical center of Drapo, I had the opportunity to integrate a dynamic landing page, highlighting the achievements of my former company."
+}

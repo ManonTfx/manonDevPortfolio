@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './i18next.js';
 import './style/tailwind.css';
 import './style/global.css';
 // eslint-disable-next-line import/order

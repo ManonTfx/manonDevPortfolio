@@ -34,6 +34,8 @@ import hand_height_dark from './hand_height_dark.svg';
 import manon from './manon.jpeg';
 import linkedinIcon from './linkedin_icon.svg';
 import githubIcon from './github_icon.svg';
+import france from './france.svg';
+import uk from './uk.svg';
 
 export {
   arrowDown,
@@ -72,4 +74,6 @@ export {
   hand_height_dark,
   linkedinIcon,
   githubIcon,
+  france,
+  uk,
 };

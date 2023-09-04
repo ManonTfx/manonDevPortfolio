@@ -1,9 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
 import { ColorModeContext, MenuBurgerContext } from '@utils/context';
 import { nav } from '@utils/datas';
+import { useTranslation } from 'react-i18next';
 import OneLink from './OneLink';
 
 function MenuBurger(): JSX.Element {
+  const { t } = useTranslation();
+
   const { menuBurgerIsOpen } = useContext(MenuBurgerContext);
   const { colorActive } = useContext(ColorModeContext);
 
@@ -28,7 +32,7 @@ function MenuBurger(): JSX.Element {
             backgroundColor: colorActive !== '#202020' ? '' : colorActive,
           }}
         >
-          {nav.map((item) => (
+          {nav(t).map((item) => (
             <OneLink item={item} key={item} />
           ))}
         </div>

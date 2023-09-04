@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ColorModeContext, ResponsiveContext } from '@utils/context';
+import LanguageSwitcher from '@components/LanguageSwitcher';
 import ButtonChangeColor from './ButtonChangeColor';
 import HandAnimation from './HandAnimation';
 import ButtonMenuHamburger from './ButtonMenuHamburger';
@@ -41,6 +42,7 @@ function Header() {
         />
       </Link>
       <div className="flex space-x-5">
+        <LanguageSwitcher />
         {!isMobile && <ButtonChangeColor />}
         <ButtonMenuHamburger />
       </div>

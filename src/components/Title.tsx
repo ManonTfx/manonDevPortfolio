@@ -1,7 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ColorModeContext } from '../utils/context';
 
 function Title() {
+  const { t } = useTranslation();
   const { colorActive, selectionColor } = useContext(ColorModeContext);
 
   return (
@@ -12,7 +15,7 @@ function Title() {
         }}
         className={`hover-target selection_color_background_${selectionColor}`}
       >
-        Développeuse Front-end /
+        {t('title')}
       </h1>
       <h2
         className={`selection_color_background_${selectionColor}`}
@@ -20,7 +23,7 @@ function Title() {
           color: colorActive !== '#202020' ? colorActive : '#B80F6A',
         }}
       >
-        Je donne vie à vos projets web
+        {t('subtitle')}
       </h2>
     </div>
   );

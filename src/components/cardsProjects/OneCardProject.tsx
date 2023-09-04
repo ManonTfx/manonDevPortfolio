@@ -1,8 +1,9 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
 import { ColorModeContext } from '@utils/context';
 import { IOneProjectCard } from '@utils/types';
 import ButtonLink from '@components/ButtonLink';
+import { useTranslation } from 'react-i18next';
 
 interface IOneCardProjectProps {
   project: IOneProjectCard;
@@ -15,6 +16,8 @@ function OneCardProject({
   refs,
   index,
 }: IOneCardProjectProps): JSX.Element {
+  const { t } = useTranslation();
+
   const { colorActive, selectionColor } = useContext(ColorModeContext);
 
   return (
@@ -58,7 +61,7 @@ function OneCardProject({
               </div>
               <ButtonLink
                 link={`/project/${project.companyName}`}
-                titleButton="EN SAVOIR PLUS"
+                titleButton={t('see_project')}
               />
             </div>
           </div>

@@ -1,8 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-nested-ternary */
 import { useContext, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ColorModeContext, ResponsiveContext } from '../utils/context';
 
 function Contact() {
+  const { t } = useTranslation();
+
   const contactContainerRef = useRef<HTMLDivElement>(null);
 
   const [showContact, setShowContact] = useState(true);
@@ -57,12 +61,12 @@ function Contact() {
           <p
             className={`font-medium font-oswald text-center lg:text-[5rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
           >
-            Intéréssé par mon profil ?
+            {t('contact_interessed')}
           </p>
           <p
             className={`mt-3 lg:text-[1.5rem] selection_color_${selectionColor}`}
           >
-            Envoyez moi un email:
+            {t('send_me_an_email')}
           </p>
           <p
             className={`font-extralight lg:text-[1.5rem]  mt-3 selection_color_${selectionColor}`}
