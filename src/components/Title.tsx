@@ -5,12 +5,12 @@ function Title() {
   const { colorActive, selectionColor } = useContext(ColorModeContext);
 
   return (
-    <div className="px-[4rem] mt-[10rem] font-bold lg:text-[6rem] text-[3rem] relative text-textColor font-oswald ">
+    <div className="px-[4rem]   mt-[10rem] font-bold lg:text-[6rem] text-[3rem] relative text-textColor font-oswald ">
       <h1
         style={{
           color: colorActive !== '#202020' ? '#413B3B' : '#FFFFFF',
         }}
-        className={`selection_color_background_${selectionColor}`}
+        className={`hover-target selection_color_background_${selectionColor}`}
       >
         Développeuse Front-end /
       </h1>

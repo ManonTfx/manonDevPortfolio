@@ -55,15 +55,17 @@ function Contact() {
       >
         <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <p
-            className={`font-medium font-oswald text-center lg:text-[4rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
+            className={`font-medium font-oswald text-center lg:text-[5rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
           >
             Intéréssé par mon profil ?
           </p>
-          <p className={`mt-3 selection_color_${selectionColor}`}>
+          <p
+            className={`mt-3 lg:text-[1.5rem] selection_color_${selectionColor}`}
+          >
             Envoyez moi un email:
           </p>
           <p
-            className={`font-extralight  mt-3 selection_color_${selectionColor}`}
+            className={`font-extralight lg:text-[1.5rem]  mt-3 selection_color_${selectionColor}`}
           >
             manon.trefoux@gmail.com
           </p>

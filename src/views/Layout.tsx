@@ -2,7 +2,6 @@
 import Header from '@components/header/Header';
 import { useEffect, useMemo, useState } from 'react';
 import MenuBuger from '@components/menuBurger/MenuBuger';
-import { scrollToBottom } from '@utils/function';
 import { useMediaQuery } from 'react-responsive';
 import {
   ColorModeContext,
@@ -16,24 +15,13 @@ interface ILayoutProps {
 
 function Layout({ children }: ILayoutProps): JSX.Element {
   const isMobileInit = useMediaQuery({ query: '(max-width: 1024px)' });
+
   const [colorActive, setColorActive] = useState<string>('#B80F6A');
   const [menuBurgerIsOpen, setMenuBurgerIsOpen] = useState<boolean>(false);
   const [selectionColor, setSelectionColor] = useState<string>('pink');
   const [linkActivMenuBurger, setLinkActivMenuBurger] = useState<string>('');
 
   const [isMobile, setIsMobile] = useState(isMobileInit);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 1024);
-    }
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  console.log('isMobile', isMobile);
 
   const colorModeContextValue = useMemo(
     () => ({
@@ -80,6 +68,7 @@ function Layout({ children }: ILayoutProps): JSX.Element {
   useEffect(() => {
     const aboutSection = document.getElementById('about');
     const projectsSection = document.getElementById('projects');
+    const contactSection = document.getElementById('contact');
 
     switch (linkActivMenuBurger) {
       case 'ABOUT':
@@ -98,24 +87,26 @@ function Layout({ children }: ILayoutProps): JSX.Element {
         });
         break;
       case 'CONTACT':
-        projectsSection?.scrollIntoView();
-
-        const projectsSectionHeight =
-          projectsSection?.getBoundingClientRect().height;
-
-        setTimeout(() => {
-          projectsSection?.scrollTo({
-            top:
-              projectsSectionHeight !== undefined
-                ? projectsSectionHeight * 6
-                : 0,
-          });
-          scrollToBottom();
-        }, 200);
+        contactSection?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
         break;
       default:
     }
   }, [linkActivMenuBurger]);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 1024);
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <ResponsiveContext.Provider value={responsiveContextValue}>
@@ -126,12 +117,12 @@ function Layout({ children }: ILayoutProps): JSX.Element {
               backgroundColor:
                 colorActive === '#202020' ? colorActive : '#ffffff',
             }}
-            className="max-w-screen"
+            className="max-w-screen relative"
           >
             <Header />
             <MenuBuger />
             <div
-              className="transition-all duration-500"
+              className="transition-all duration-500 "
               style={{ opacity: menuBurgerIsOpen ? 0 : 1 }}
             >
               {children}

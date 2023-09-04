@@ -26,14 +26,7 @@ function ProjectDetail() {
   const { colorActive } = useContext(ColorModeContext);
 
   useEffect(() => {
-    const projectsSection = document.getElementById('projects');
-
-    setTimeout(() => {
-      projectsSection?.scrollTo({
-        top: 0,
-      });
-      scrollToTop();
-    }, 200);
+    scrollToTop();
 
     switch (project) {
       case 'OPX':
@@ -140,7 +133,7 @@ function ProjectDetail() {
           )}
           {projectDatas.videos !== null && projectDatas.videos.length === 1 && (
             <video
-              className="rounded-default w-full"
+              className="rounded-default w-1/2"
               controls
               autoPlay
               loop
