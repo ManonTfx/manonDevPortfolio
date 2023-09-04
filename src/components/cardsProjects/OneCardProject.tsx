@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { useContext } from 'react';
 import { ColorModeContext } from '@utils/context';
 import { IOneProjectCard } from '@utils/types';
@@ -5,18 +6,25 @@ import ButtonLink from '@components/ButtonLink';
 
 interface IOneCardProjectProps {
   project: IOneProjectCard;
+  refs: any[];
+  index: number;
 }
 
-function OneCardProject({ project }: IOneCardProjectProps): JSX.Element {
+function OneCardProject({
+  project,
+  refs,
+  index,
+}: IOneCardProjectProps): JSX.Element {
   const { colorActive, selectionColor } = useContext(ColorModeContext);
 
   return (
     <div
+      ref={refs[index]}
       style={{
         backgroundColor: colorActive !== '#202020' ? '#ffffff' : '#202020',
         color: colorActive !== '#202020' ? '#413B3B' : '#ffffff',
       }}
-      className="h-screen p-2 rounded-default lg:mx-[4rem] mx-[2rem] lg:sticky top-0"
+      className="h-screen p-2 rounded-default lg:mx-[4rem] mx-[2rem] lg:sticky top-0 m-auto transition-all duration-500"
     >
       <div
         style={{
