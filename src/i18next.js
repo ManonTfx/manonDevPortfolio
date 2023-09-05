@@ -7,7 +7,7 @@ i18next
   .use(I18NextHttpBackend)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en', // utilise 'en' si la langue n'est pas disponible
+    fallbackLng: 'fr', // utilise 'en' si la langue n'est pas disponible
     interpolation: {
       escapeValue: false,
     },
