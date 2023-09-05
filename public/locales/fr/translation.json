@@ -4,11 +4,11 @@
     "subtitle": "Je donne vie à vos projets web",
         "nav": {
         "home": "ACCUEIL",
-        "about": "A PROPOS",
+        "about": "À PROPOS",
         "projects": "PROJETS",
         "contact": "CONTACT"
         },
-    "hello_text": "Codeuse passionnée et créative, basée à Marseille et prête à infuser une dose d'innovation et de technicité dans votre équipe ! Je vous invite à découvrir mes travaux et mon univers en parcourant mon portfolio.",
+    "hello_text": "Codeuse passionnée et créative, basée à Marseille et prête à infuser une dose d'innovation et de technicité dans votre équipe ! Je vous invite à découvrir mon travail et mon univers en parcourant mon portfolio.",
     "about_presentation": "Passionnée par l'informatique et le monde numérique, j'ai orienté ma carrière vers le développement front-end, en me spécialisant dans les technologies JavaScript, TypeScript et React. Parallèlement, je possède également des compétences solides en WordPress. Ma curiosité naturelle m'amène à chercher constamment à améliorer mes compétences et à relever de nouveaux défis.",
     "learn_more": "En savoir plus",
     "skills": "COMPETENCES",
@@ -23,11 +23,11 @@
     "see_website": "ACCEDER AU SITE",
     "contact_interessed": "Intéressé par mon profil ?",
     "send_me_an_email": "Envoyez-moi un email:",
-    "opx_description": "OPX est une plateforme de gestion administrative. Elle a été développé dans le but de faciliter la gestion des primes CEE. Elle permet de gérer les dossiers, les factures, les primes et les paiements. On retrouve dans cette application un dashboard avec des graphiques et des tableaux. Il est possible de filtrer les données et de les exporter. Un simulateur d'aide a également été intégré à l'application.",
+    "opx_description": "OPX est une plateforme de gestion administrative. Elle a été développée dans le but de faciliter la gestion des primes CEE par les installateurs de matériel en lien avec des projets de rénovation énergétique. Elle permet de gérer les dossiers, les factures, les primes et les paiements. On retrouve dans cette application un dashboard avec des graphiques et des tableaux. Il est possible de filtrer les données et de les exporter. Un simulateur d'aide a également été intégré à l'application.",
     "drapo_description": "Drapo est une entreprise qui propose des solutions de financement pour les projets de rénovation énergétique en incluant les primes dans les devis, et offre un accompagnement expert tout au long du parcours des partenaires pour faciliter la transition énergétique.",
     "drapo_subdescription": "En tant que développeuse front-end chez Drapo pendant deux ans, j'ai eu l'occasion d'intégrer entièrement leur landing page et j'ai participé à l'intégration de leur espace pro, plateforme qui permet de gérer le suivi des dossiers et des primes.",
     "remi_blanchet_description": "Remi Blanchet est un jeune créateur de mode style street wear qui m'a fait confiance pour l'intégration de son site E-Commerce. Celui-ci à été réalisé grâce au CMS Shopify.",
-    "valentine_bouvet_description": "Valentine Bouvet est une artiste peintre qui m'a fait confiance pour l'intégration de son site vitrine. Celui-ci à été réalisé grâce au CMS Shopify.",
-    "techpath_description" : "Techpath est une jeune entreprise spécialisé dans la tech qui offre plusieurs services comme la création de site web, le développement d'application mobile, la création de logo et l'optimisation SEO. J'ai intégré la landing page grâce au CMS Wordpress, rédigé les articles présents sur le blog de l'entreprise et j'ai également participé à la création du logo.",
-    "drapo_solution_description": "Drapo Solution étant le pôle technique de Drapo, j'ai eu l'occasion d'intégrer une landing page dynamique, mettant en avant les réalisations de mon ancienne entreprise."
+    "valentine_bouvet_description": "Valentine Bouvet est une artiste peintre basée à Paris. Elle m'a fait confiance pour l'intégration de son site vitrine. Celui-ci a été réalisé grâce au CMS Shopify.",
+    "techpath_description" : "Techpath est une jeune entreprise spécialisé dans l'IT qui offre plusieurs services comme la création de site web, le développement d'application mobile, la création de logo et l'optimisation SEO. J'ai intégré la landing page grâce au CMS Wordpress, rédigé les articles présents sur le blog et j'ai également participé à la création du logo.",
+    "drapo_solution_description": "Drapo Solution est le pôle technique de Drapo. J'ai eu l'occasion d'intégrer leur landing page, mettant en avant leur réalisation de façon dynamique."
     }
