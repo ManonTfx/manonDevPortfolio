@@ -16,17 +16,17 @@ function OneLink({ item }: { item: string }) {
   const handleLearnMoreClick = (name: string) => {
     updateMenuBurgerIsOpen(false);
     switch (name) {
-      case 'HOME':
+      case 'HOME' || 'ACCUEIL':
         router('/');
         updateLinkActivMenuBurger('');
         break;
-      case 'ABOUT':
+      case 'ABOUT' || 'A PROPOS':
         if (location.pathname.includes('project')) {
           router('/');
         }
         updateLinkActivMenuBurger('ABOUT');
         break;
-      case 'PROJECTS':
+      case 'PROJECTS' || 'PROJETS':
         updateLinkActivMenuBurger('PROJECTS');
         break;
       case 'CONTACT':
