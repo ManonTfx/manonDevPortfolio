@@ -1,8 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-case-declarations */
 import Header from '@components/header/Header';
 import { useEffect, useMemo, useState } from 'react';
 import MenuBuger from '@components/menuBurger/MenuBuger';
 import { useMediaQuery } from 'react-responsive';
+import Lenis from '@studio-freight/lenis';
 import {
   ColorModeContext,
   MenuBurgerContext,
@@ -100,9 +102,21 @@ function Layout({ children }: ILayoutProps): JSX.Element {
     function handleResize() {
       setIsMobile(window.innerWidth <= 1024);
     }
-
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    const lenis = new Lenis();
+    lenis.on('scroll', (e: any) => {
+      console.log(e);
+    });
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };

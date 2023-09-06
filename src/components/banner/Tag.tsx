@@ -19,7 +19,7 @@ function Tag({ text, border }: ITagProps) {
             ? '1px solid #fff'
             : 'none',
       }}
-      className="font-oswald font-bold text-[2rem] flex items-center space-x-2 rounded-full border border-2 px-10 mr-2"
+      className="font-oswald font-bold tracking-tighter text-[3rem] flex items-center space-x-2 rounded-full border border-2 px-10 mr-2"
     >
       <span>#</span> {text}
     </div>

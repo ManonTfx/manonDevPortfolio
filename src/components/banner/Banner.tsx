@@ -6,7 +6,7 @@ import Tag from './Tag';
 
 function Banner() {
   const [hover, setHover] = useState(false);
-  const [duration, setDuration] = useState(15000);
+  const [duration, setDuration] = useState(20000);
 
   const TAGS = bannerWords;
   const ROWS = 2;
@@ -20,7 +20,7 @@ function Banner() {
     if (hover) {
       setDuration(25000);
     } else {
-      setDuration(15000);
+      setDuration(20000);
     }
   }, [hover]);
 

@@ -1975,6 +1975,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@studio-freight/lenis@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.22.tgz#0bdf21eed5994ba7b703779adf84d5018d2f7758"
+  integrity sha512-CU4VT2rZjrpp4bSqpIYe+qA4vK0yZeIl2lM0tcU5mX5k03smhCAAiDiLjgXJ1mrU9za6cU0O8C69zTOVbSBpwg==
+
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
   resolved "https://registry.npmjs.org/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-2.2.3.tgz"
@@ -8096,6 +8101,11 @@ launch-editor@^2.6.0:
     picocolors "^1.0.0"
     shell-quote "^1.7.3"
 
+lenis@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/lenis/-/lenis-0.0.2.tgz#85f8c200fb60383570fef79fa2542f752999f763"
+  integrity sha512-lQBkSrQt0VATcXvG5L5yU9Bn3un4fijTfb7g+d3GkkuAzB4b3LtKVUeN0heOgPkl/SzQ/FQDXj+w8eXjfdxSiQ==
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/leven/-/leven-3.1.0.tgz"
@@ -10955,6 +10965,11 @@ split-string@^3.0.1, split-string@^3.0.2:
   integrity sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
   dependencies:
     extend-shallow "^3.0.0"
+
+split-type@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/split-type/-/split-type-0.3.3.tgz#5ed4503d96cddcccea1ca2dcae0bbc330ff3282e"
+  integrity sha512-gEA90DEHJhdT/5Da2gR7FPHgaGgivTN4PfZBtHKcl4quDLsE3x7tJlGTKEp4yyqpfi1wCaqeKE+s2UCqBRjJYA==
 
 sprintf-js@~1.0.2:
   version "1.0.3"

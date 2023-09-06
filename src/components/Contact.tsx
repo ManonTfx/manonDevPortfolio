@@ -1,7 +1,12 @@
+/* eslint-disable no-shadow */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-nested-ternary */
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import SplitType from 'split-type';
 import { ColorModeContext, ResponsiveContext } from '../utils/context';
 
 function Contact() {
@@ -15,6 +20,27 @@ function Contact() {
   const { isMobile } = useContext(ResponsiveContext);
 
   const handleWindowScroll = () => {
+    const textElement = document.querySelector('.text-animation');
+
+    function animateTextWithSplitType(textElement: any) {
+      const text = new SplitType(textElement);
+
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: textElement,
+          start: '-100% center',
+          end: '200% center',
+          scrub: true,
+          markers: false,
+        },
+        opacity: 0.2,
+        stagger: 0.1,
+      });
+    }
+    if (textElement) {
+      animateTextWithSplitType(textElement);
+    }
+
     // component contact
     if (contactContainerRef.current) {
       const container = contactContainerRef.current.getBoundingClientRect();
@@ -59,7 +85,7 @@ function Contact() {
       >
         <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <p
-            className={`font-medium font-oswald text-center lg:text-[5rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
+            className={`text-animation font-medium font-oswald text-center lg:text-[5rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
           >
             {t('contact_interessed')}
           </p>
