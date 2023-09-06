@@ -18,7 +18,7 @@ function Banner() {
 
   useEffect(() => {
     if (hover) {
-      setDuration(25000);
+      setDuration(40000);
     } else {
       setDuration(20000);
     }
