@@ -12,6 +12,7 @@ function Tag({ text, border }: ITagProps) {
   return (
     <div
       style={{
+        color: colorActive !== '#202020' ? '#413B3B' : '#ffffff',
         border:
           colorActive !== '#202020' && border
             ? '1px solid #202020'
