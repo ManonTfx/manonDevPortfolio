@@ -1,13 +1,14 @@
-/* eslint-disable no-shadow */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-nested-ternary */
+/* eslint-disable import/no-extraneous-dependencies */
+
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ColorModeContext, ResponsiveContext } from '../utils/context';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Contact() {
   const { t } = useTranslation();
@@ -20,27 +21,6 @@ function Contact() {
   const { isMobile } = useContext(ResponsiveContext);
 
   const handleWindowScroll = () => {
-    const textElement = document.querySelector('.text-animation');
-
-    function animateTextWithSplitType(textElement: any) {
-      const text = new SplitType(textElement);
-
-      gsap.from(text.chars, {
-        scrollTrigger: {
-          trigger: textElement,
-          start: '-100% center',
-          end: '200% center',
-          scrub: true,
-          markers: false,
-        },
-        opacity: 0.2,
-        stagger: 0.1,
-      });
-    }
-    if (textElement) {
-      animateTextWithSplitType(textElement);
-    }
-
     // component contact
     if (contactContainerRef.current) {
       const container = contactContainerRef.current.getBoundingClientRect();
@@ -64,6 +44,29 @@ function Contact() {
     };
   }, [isMobile]);
 
+  useEffect(() => {
+    const textElements: any = document.querySelectorAll(
+      '.interested-text-animation'
+    );
+
+    textElements.forEach((textElement: any) => {
+      const text = new SplitType(textElement, { types: 'chars' });
+
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: textElement,
+          start: '-300% center',
+          end: 'bottom center',
+          scrub: true,
+          markers: false,
+        },
+        y: 100,
+        opacity: 0.2,
+        stagger: 0.1,
+      });
+    });
+  }, []);
+
   return (
     <div
       ref={contactContainerRef}
@@ -83,20 +86,20 @@ function Contact() {
         }}
         className="m-auto h-full relative text-white"
       >
-        <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <p
-            className={`text-animation font-medium font-oswald text-center lg:text-[5rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
+            className={`interested-text-animation font-medium font-oswald text-center lg:text-[6rem] text-[2rem] tracking-tighter selection_color_${selectionColor}`}
           >
             {t('contact_interessed')}
           </p>
           <p
-            className={`mt-3 lg:text-[1.5rem] selection_color_${selectionColor}`}
+            className={`mt-3 lg:text-[1.5rem] selection_color_${selectionColor} `}
           >
             {t('send_me_an_email')}
           </p>
           <a
             href="mailto:manon.trefoux@gmail.com"
-            className={`font-extralight lg:text-[1.5rem]  mt-3 selection_color_${selectionColor}`}
+            className={`font-extralight lg:text-[1.5rem]  mt-3 selection_color_${selectionColor} `}
           >
             manon.trefoux@gmail.com
           </a>
