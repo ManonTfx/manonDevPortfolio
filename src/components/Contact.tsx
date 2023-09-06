@@ -55,13 +55,14 @@ function Contact() {
       gsap.from(text.chars, {
         scrollTrigger: {
           trigger: textElement,
-          start: '-300% center',
+          start: '-500% center',
           end: 'bottom center',
           scrub: true,
           markers: false,
         },
-        y: 100,
-        opacity: 0.2,
+        scaleY: 0,
+        y: -20,
+        transformOrigin: 'top',
         stagger: 0.1,
       });
     });
