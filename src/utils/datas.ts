@@ -173,20 +173,18 @@ const TechpathDatas = (t: TFunction) => {
 const bannerWords = [
   { id: 0, title: 'EXPERTISE' },
   { id: 1, title: 'REACT' },
-  { id: 2, title: 'JAVASCRIPT' },
+  { id: 2, title: 'FRONT' },
   { id: 3, title: 'UX' },
-  { id: 4, title: 'MOBILE-FIRST' },
-  { id: 5, title: 'COLLABORATION' },
-  { id: 6, title: 'ADAPTABILITE' },
-  { id: 7, title: 'RESPSONSIVE' },
-  { id: 8, title: 'EXPERTISE' },
-  { id: 9, title: 'REACT' },
+  { id: 4, title: 'TYPESCRIPT' },
+  { id: 5, title: 'SEO' },
+  { id: 6, title: 'DEVELOPMENT' },
+  { id: 7, title: 'CSS' },
+  { id: 8, title: 'TAILWIND' },
+  { id: 9, title: 'NEXT.JS' },
   { id: 10, title: 'JAVASCRIPT' },
   { id: 11, title: 'UX' },
-  { id: 12, title: 'MOBILE-FIRST' },
-  { id: 13, title: 'COLLABORATION' },
-  { id: 14, title: 'ADAPTABILITE' },
   { id: 15, title: 'RESPSONSIVE' },
+  { id: 16, title: 'HTML' },
 ];
 
 const handSvgLightMode = [

@@ -7,7 +7,7 @@ function HandAnimation() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 
-  const { colorActive } = useContext(ColorModeContext);
+  const { colorActive, selectionColor } = useContext(ColorModeContext);
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -48,7 +48,11 @@ function HandAnimation() {
 
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <img src={svgArray[currentImageIndex]} className="h-[2.5rem]" alt="" />
+      <img
+        className={`h-[2.5rem] selection_color_background_${selectionColor}`}
+        src={svgArray[currentImageIndex]}
+        alt=""
+      />
     </div>
   );
 }

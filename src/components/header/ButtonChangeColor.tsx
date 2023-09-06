@@ -3,7 +3,8 @@ import { colors } from '@utils/datas';
 import { ColorModeContext } from '@utils/context';
 
 function ButtonChangeColor() {
-  const { colorActive, updateColorActive } = useContext(ColorModeContext);
+  const { colorActive, updateColorActive, selectionColor } =
+    useContext(ColorModeContext);
   const [showColors, setShowColors] = useState(false);
 
   return (
@@ -18,9 +19,9 @@ function ButtonChangeColor() {
     >
       <div className="flex items-center text-[1.1rem] py-1 px-3 rounded-[8px]">
         <p
-          className={
+          className={` ${
             colorActive === '#202020' ? 'text-white' : 'text-textColor'
-          }
+          }  selection_color_background_${selectionColor}`}
         >
           COLOR MODE
         </p>

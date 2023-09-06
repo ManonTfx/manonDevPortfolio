@@ -31,11 +31,12 @@ function CardsProjectsContainer(): JSX.Element {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [refs]);
+
   return (
     <div
       style={{ height: 'calc(100vh * 6)' }}
       id="projects"
-      className="lg:h-screen mt-[5rem] lg:relative"
+      className="lg:h-screen my-[10rem] lg:relative"
     >
       {projectsCardsData.map((project, index) => (
         <OneCardProject

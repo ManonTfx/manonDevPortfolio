@@ -7,7 +7,7 @@ import { ColorModeContext } from '@utils/context';
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
-  const { colorActive } = useContext(ColorModeContext);
+  const { colorActive, selectionColor } = useContext(ColorModeContext);
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
@@ -26,14 +26,22 @@ function LanguageSwitcher() {
         type="button"
         onClick={() => changeLanguage('en')}
       >
-        <img className="rounded-[8px] object-fit" src={uk} alt="" />
+        <img
+          className={`rounded-[8px] object-fit selection_color_background_${selectionColor}`}
+          src={uk}
+          alt=""
+        />
       </button>
       <button
         className="h-5 w-8"
         type="button"
         onClick={() => changeLanguage('fr')}
       >
-        <img className="rounded-[8px] object-fit" src={france} alt="" />
+        <img
+          className={`rounded-[8px] object-fit selection_color_background_${selectionColor}`}
+          src={france}
+          alt=""
+        />
       </button>
     </div>
   );

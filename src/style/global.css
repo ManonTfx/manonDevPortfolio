@@ -132,12 +132,21 @@ body {
   }
 }
 
-.sticky-card {
-  position: -webkit-sticky; /* Pour Safari */
-  position: sticky;
-  top: 0;
+/* ANIMATION BANNER */
+.inner {
+  display: flex;
+  width: fit-content;
+  animation-name: loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: var(--direction);
+  animation-duration: var(--duration);
 }
-
-.sticky-container {
-  position: relative;
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

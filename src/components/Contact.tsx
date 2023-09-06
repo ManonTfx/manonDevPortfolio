@@ -68,11 +68,12 @@ function Contact() {
           >
             {t('send_me_an_email')}
           </p>
-          <p
+          <a
+            href="mailto:manon.trefoux@gmail.com"
             className={`font-extralight lg:text-[1.5rem]  mt-3 selection_color_${selectionColor}`}
           >
             manon.trefoux@gmail.com
-          </p>
+          </a>
         </div>
       </div>
     </div>

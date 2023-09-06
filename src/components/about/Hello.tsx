@@ -9,9 +9,9 @@ function Hello() {
   const { selectionColor } = useContext(ColorModeContext);
 
   return (
-    <div className="lg:w-11/12">
+    <div className={`lg:w-11/12 selection_color_background_${selectionColor}`}>
       <span
-        className={`lg:text-[2.2rem] text-[1.5rem] absolute rounded-default px-4 border border-1 whiteselection_color_${selectionColor}`}
+        className={`lg:text-[2.2rem] text-[1.5rem] absolute rounded-default px-4 border border-1 selection_color_background_${selectionColor}`}
       >
         Hello !
       </span>

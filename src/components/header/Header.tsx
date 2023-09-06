@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ColorModeContext, ResponsiveContext } from '@utils/context';
-import LanguageSwitcher from '@components/LanguageSwitcher';
+import LanguageSwitcher from './LanguageSwitcher';
 import ButtonChangeColor from './ButtonChangeColor';
 import HandAnimation from './HandAnimation';
 import ButtonMenuHamburger from './ButtonMenuHamburger';
 
 function Header() {
-  const { colorActive } = useContext(ColorModeContext);
+  const { colorActive, selectionColor } = useContext(ColorModeContext);
   const { isMobile } = useContext(ResponsiveContext);
 
   return (
@@ -18,7 +18,7 @@ function Header() {
       <Link to="/" className="flex space-x-1 items-end hover">
         <HandAnimation />
         <p
-          className="font-medium text-[1.2rem]"
+          className={`font-medium text-[1.2rem] selection_color_background_${selectionColor}`}
           style={{
             color: colorActive === '#202020' ? '#ffffff' : '#202020',
           }}
@@ -26,7 +26,7 @@ function Header() {
           manon
         </p>
         <p
-          className="font-medium text-[1.2rem]"
+          className={`font-medium text-[1.2rem] selection_color_background_${selectionColor}`}
           style={{
             color: colorActive === '#202020' ? '#B80F6A' : colorActive,
           }}

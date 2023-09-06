@@ -27,7 +27,7 @@ function OneCardProject({
         backgroundColor: colorActive !== '#202020' ? '#ffffff' : '#202020',
         color: colorActive !== '#202020' ? '#413B3B' : '#ffffff',
       }}
-      className="h-screen p-5 rounded-default lg:mx-[4rem] mx-[2rem] sticky top-0 m-auto transition-all duration-500"
+      className="h-screen  rounded-default lg:mx-[4rem] mx-[4rem] sticky top-5 m-auto transition-all duration-500"
     >
       <div
         style={{
@@ -53,7 +53,7 @@ function OneCardProject({
                       borderColor:
                         colorActive !== '#202020' ? '#413B3B' : '#B80F6A',
                     }}
-                    className="border p-2 px-4 rounded-default w-fit	 "
+                    className={`border p-2 px-4 rounded-default w-fit	 selection_color_background_${selectionColor}`}
                   >
                     {stack}
                   </div>
