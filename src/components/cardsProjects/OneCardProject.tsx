@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
 import { ColorModeContext } from '@utils/context';
@@ -47,8 +48,9 @@ function OneCardProject({
             </p>
             <div className="flex flex-col justify-between h-[80%]">
               <div className="flex flex-col lg:space-y-2">
-                {project.stacks.map((stack) => (
+                {project.stacks.map((stack, i) => (
                   <div
+                    key={i}
                     style={{
                       borderColor:
                         colorActive !== '#202020' ? '#413B3B' : '#B80F6A',
